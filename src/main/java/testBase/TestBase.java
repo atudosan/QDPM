@@ -28,10 +28,10 @@ public class TestBase {
 		// set it for our driver instance
 		WebDriver driver = DriverFactory.getInstance().getDriver();
 
-		driver.manage().window().maximize();
-		;
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
 
 	}
 

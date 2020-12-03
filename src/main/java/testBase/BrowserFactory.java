@@ -17,7 +17,7 @@ public class BrowserFactory {
 
 		WebDriver driver = null;
 
-		if (browser.equalsIgnoreCase("firefox")) {
+		if (browser.equalsIgnoreCase("chrome")) {
 			
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
