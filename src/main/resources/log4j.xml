@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n" />
+				<!-- Append the log to the my console -->>
+		</Console>
+		<Routing name="RoutingAppender">
+			<Routes pattern="$${ctx:logFilename}"> <!-- "ctx:logFilename" will allow to give name dynamically from my test case -->>
+				<Route>
+					<RollingFile name="Rolling-${ctx:logFilename}" >
+						fileName="logs/${ctx:logFilename}.log" <!-- The Name of the file will be not harcoded, but will be according to the name of test case-->
+						filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+						append="true">
+						<PatternLayout
+							pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n" />
+						<SizeBasedTriggeringPolicy size="10 MB" />
+					</RollingFile>
+				</Route>
+			</Routes>
+		</Routing>
+	</Appenders>
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="RoutingAppender" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
