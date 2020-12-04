@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-03T09:09:48 PST" name="Suite" finished-at="2020-12-03T09:10:18 PST" duration-ms="29195">
+  <suite started-at="2020-12-04T12:17:05 PST" name="Suite" finished-at="2020-12-04T12:17:29 PST" duration-ms="24073">
     <groups>
     </groups>
-    <test started-at="2020-12-03T09:09:48 PST" name="Test" finished-at="2020-12-03T09:10:18 PST" duration-ms="29195">
+    <test started-at="2020-12-04T12:17:05 PST" name="LoginTests" finished-at="2020-12-04T12:17:29 PST" duration-ms="24073">
       <class name="tests.TestCase">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@1b6e1eff]" started-at="2020-12-03T09:09:49 PST" name="LaunchApplication" finished-at="2020-12-03T09:10:18 PST" duration-ms="29094" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@4bb33f74]" started-at="2020-12-04T12:17:06 PST" name="LaunchApplication" finished-at="2020-12-04T12:17:21 PST" duration-ms="15594" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@1b6e1eff]" started-at="2020-12-03T09:09:49 PST" name="LaunchApplication" finished-at="2020-12-03T09:10:17 PST" duration-ms="28531" status="PASS">
+        <test-method signature="login1()[pri:0, instance:tests.TestCase@4bb33f74]" started-at="2020-12-04T12:17:21 PST" name="login1" finished-at="2020-12-04T12:17:22 PST" duration-ms="434" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LaunchApplication -->
-        <test-method signature="TestCase2()[pri:0, instance:tests.TestCase@1b6e1eff]" started-at="2020-12-03T09:10:17 PST" name="TestCase2" finished-at="2020-12-03T09:10:17 PST" duration-ms="27" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@1b6e1eff]" started-at="2020-12-03T09:10:17 PST" name="tearDown" finished-at="2020-12-03T09:10:17 PST" duration-ms="245" status="PASS">
+        </test-method> <!-- login1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@4bb33f74]" started-at="2020-12-04T12:17:22 PST" name="tearDown" finished-at="2020-12-04T12:17:22 PST" duration-ms="129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="TestCase1()[pri:0, instance:tests.TestCase@1b6e1eff]" started-at="2020-12-03T09:10:18 PST" name="TestCase1" finished-at="2020-12-03T09:10:18 PST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@4bb33f74]" started-at="2020-12-04T12:17:22 PST" name="LaunchApplication" finished-at="2020-12-04T12:17:29 PST" duration-ms="6587" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCase1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@1b6e1eff]" started-at="2020-12-03T09:10:18 PST" name="tearDown" finished-at="2020-12-03T09:10:18 PST" duration-ms="52" status="PASS">
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="login2()[pri:0, instance:tests.TestCase@4bb33f74]" started-at="2020-12-04T12:17:29 PST" name="login2" finished-at="2020-12-04T12:17:29 PST" duration-ms="330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@4bb33f74]" started-at="2020-12-04T12:17:29 PST" name="tearDown" finished-at="2020-12-04T12:17:29 PST" duration-ms="64" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.TestCase -->
-    </test> <!-- Test -->
+    </test> <!-- LoginTests -->
   </suite> <!-- Suite -->
 </testng-results>

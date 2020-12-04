@@ -2,18 +2,20 @@ package tests;
 
 import org.testng.annotations.Test;
 
+import pageObjects.LoginPageObjects;
 import testBase.TestBase;
 
 public class TestCase extends TestBase {
+	LoginPageObjects login = new LoginPageObjects();
 	
 	@Test
-	public void TestCase1() {
-		System.out.println("1");
+	public void login1() {
+		login.loginIntoAccount("michael@jackson.com", "Michael");
 	}
 	
 	@Test
-	public void TestCase2() {
-		System.out.println("2");
+	public void login2() {
+		login.loginIntoAccount("michael@jackson.com", "Michael");
 	}
 
 }

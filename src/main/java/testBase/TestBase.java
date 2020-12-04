@@ -7,8 +7,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import reusableComponents.ConfigPropExtractData;
+import reusableComponents.EngineAction;
 
-public class TestBase {
+public class TestBase extends EngineAction {
 
 	// create an instance of BrowserFactoryClass in order to pass it to the
 	// setDriver() method from DriveFactoryClass.

@@ -1,31 +1,27 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPageObjects {
-	
-	@FindBy(name="login[email]")
-	WebElement txt_email;
-	
-	@FindBy(name="login[password]")
-	WebElement txt_password;
-	
-	@FindBy(xpath="//input[@type='submit']")
-	WebElement btn_login;
+import testBase.DriverFactory;
+import testBase.TestBase;
 
-	//initiate all the page objects for passed driver instance
-	public LoginPageObjects(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-	}
+public class LoginPageObjects extends TestBase {
+	
+	By EMAIL = By.name("login[email]");
+	By PASSWORD = By.name("login[password]");
+	By LOGIN_BTN = By.xpath("//button[@type='submit' and text()='Login ']");
+
+
 	
 	//log to account
-	public void login(String email, String password) {
-		txt_email.sendKeys(email);
-		txt_password.sendKeys(password);
-		btn_login.click();
+	public void loginIntoAccount(String email, String password) {
+		WebElement emailTextField = DriverFactory.getInstance().getDriver().findElement(EMAIL);
+		sendText(emailTextField, "Email Login Field", email);
+		WebElement passwordTextField = DriverFactory.getInstance().getDriver().findElement(PASSWORD);
+		sendText(passwordTextField, "Password Login Field", password);
+		WebElement loginButton = DriverFactory.getInstance().getDriver().findElement(PASSWORD);
+		click(loginButton, "Login Button");
 		
 	}
 	

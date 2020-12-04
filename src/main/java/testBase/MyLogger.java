@@ -24,11 +24,10 @@ public class MyLogger {
 	
 	/* In startLog method we pass as a param "String dirPath" is the path where I want to store the log files
 	 * And I will pass it according to my pom.xml file where the system prop varables are -
-	 * 
-	 * 
+	 *  "<systemPropertyVariables> 
+	 *		<log.directory>${project.basedir}\Output\${maven.build.timestamp}\Logs\</log.directory>
+	 *   </systemPropertyVariables>" 
 	 * */
-	
-	
 	private static void startLog(String dirPath, String testCaseName) {
 
 		int noOfFiles = 0;
