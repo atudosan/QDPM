@@ -5,67 +5,68 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
-public class HomePageObjects {
+import testBase.DriverFactory;
+import testBase.TestBase;
+
+public class HomePageObjects extends TestBase {
 	
-	WebDriver driver = null;
+	//WebDriver driver = null;
+	By userFullName_By = By.xpath("//span[@class='username']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Dashboard']")
-	WebElement sidebarMenu_Dashboard;
+	By sidebarMenu_Dashboard_By = By.xpath("//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Dashboard']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Projects']")
-	WebElement sidebarMenu_Projects;
+	By sidebarMenu_Projects_By = By.xpath("//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Projects']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Projects']"
-			+ "/ancestor::a/following-sibling::ul//li/a[@class='cursor-pointer']/span")
-	WebElement subMenu_Projects_AddProject;
+	By subMenu_Projects_AddProject_By = By.xpath("//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Projects']"
+			+ "/ancestor::a/following-sibling::ul//li/a[@class='cursor-pointer']/span");
+
+	By subMenu_Projects_ViewAll_By = By.xpath("//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Projects']/"
+			+ "ancestor::a/following-sibling::ul//li/a/span[text()='View All']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Projects']/"
-			+ "ancestor::a/following-sibling::ul//li/a/span[text()='View All']")
-	WebElement subMenu_Projects_ViewAll;
+	By sidebarMenu_Tasks_By = By.xpath("//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Tasks']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Tasks']")
-	WebElement sidebarMenu_Tasks;
+	By subMenu_Tasks_AddTask_By = By.xpath("//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Tasks']/ancestor"
+			+ "::a/following-sibling::ul//li/a[@class='cursor-pointer']/span");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Tasks']/ancestor"
-			+ "::a/following-sibling::ul//li/a[@class='cursor-pointer']/span")
-	WebElement subMenu_Tasks_AddTask;
+	By subMenu_Tasks_ViewAll_By = By.xpath("//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Tasks']/"
+			+ "ancestor::a/following-sibling::ul//li/a/span[text()='View All']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Tasks']/"
-			+ "ancestor::a/following-sibling::ul//li/a/span[text()='View All']")
-	WebElement subMenu_Tasks_ViewAll;
+	By sidebarMenu_Users_By = By.xpath("//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Users']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Users']")
-	WebElement sidebarMenu_Users;
+	By subMenu_Users_AddUser_By = By.xpath("//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Users']/ancestor"
+			+ "::a/following-sibling::ul//li/a[@class='cursor-pointer']/span");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='Users']/ancestor"
-			+ "::a/following-sibling::ul//li/a[@class='cursor-pointer']/span")
-	WebElement subMenu_Users_AddUser;
+	By subMenu_Users_ViewAll_By = By.xpath("//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Users']/"
+			+ "ancestor::a/following-sibling::ul//li/a/span[text()='View All']");
 	
-	@FindBy(xpath="//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='Users']/"
-			+ "ancestor::a/following-sibling::ul//li/a/span[text()='View All']")
-	WebElement subMenu_Users_ViewAll;
 	
-	public HomePageObjects(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-		//whever we will create an object of this class it will pass the driver value to the class driver variable  
-		this.driver = driver;
-	}
+	
 	
 	public void clickOnMenu(String menu) {
-		String menuXpath = "//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='"+menu+"']";
-		driver.findElement(By.xpath(menuXpath)).click();
+		String menuXpath_str = "//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='"+menu+"']";
+		WebElement menuXpath = DriverFactory.getInstance().getDriver().findElement(By.xpath(menuXpath_str));
+		click(menuXpath, "Menu");
 	}
 	
 	public void clickOnSubMenu(String menu, String subMenu) {
-		String menuXpath = "//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='"+menu+"']";
-		driver.findElement(By.xpath(menuXpath)).click();
-		String subMenuXpath = "//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='"+menu+"']/"
+		String menuXpath_str = "//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='"+menu+"']";
+		WebElement menuXpath = DriverFactory.getInstance().getDriver().findElement(By.xpath(menuXpath_str));
+		click(menuXpath, "Menu");
+		
+		String subMenuXpath_str = "//ul[@class='page-sidebar-menu']//li/a/i/following-sibling::span[text()='"+menu+"']/"
 				+ "ancestor::a/following-sibling::ul//li/a/span[text()='"+subMenu+"']";
-		driver.findElement(By.xpath(subMenuXpath)).click();
+		WebElement subMenuXpath = DriverFactory.getInstance().getDriver().findElement(By.xpath(subMenuXpath_str));
+		click(subMenuXpath, "SubMenu");
 	}
 	
-	
+	public void checkIfHomePageisOpened(String expectedFullname) throws Throwable {
+		WebElement userFullName = DriverFactory.getInstance().getDriver().findElement(userFullName_By);
+		String actualUserFullName = getTextFromWebElement(userFullName, "User Full Name");
+		assertEqualsString(actualUserFullName, expectedFullname, "Full Name Account");
+		//assertIfActualStringContainsExpectedString(actualUserFullName, expectedFullname, "Full Name Account");		
+	}
 	
 
 }

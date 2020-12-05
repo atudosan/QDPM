@@ -35,7 +35,7 @@ public class EngineAction {
 		}
 	}
 
-	public void moveCursorTowebElement(WebElement webElement, String element) {
+	public void moveCursorToWebElement(WebElement webElement, String element) {
 		try {
 			JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
 			executor.executeScript("arguments[0].scrollIntoView(true);", webElement);
@@ -75,7 +75,7 @@ public class EngineAction {
 	}
 
 	// Select dropdown value value by visibleText
-	public void selectDropDownByVisibleText_custom(WebElement webElement, String element, String ddVisibleText)
+	public void selectDropDownByVisibleText(WebElement webElement, String element, String ddVisibleText)
 			throws Throwable {
 		try {
 			Select s = new Select(webElement);
@@ -117,12 +117,30 @@ public class EngineAction {
 			Assert.assertTrue(false, e.toString());
 		}
 	}
+	
+	
+	public void assertIfActualStringContainsExpectedString(String expectedValue, String actualValue, String locatorName)
+			throws Throwable {
+		try {
+			if (actualValue.contains(expectedValue)) {
+				ExtentFactory.getInstance().getExtent().log(Status.PASS, "String Assertion is successful on field "
+						+ locatorName + " Expected value was: " + expectedValue + " actual value is: " + actualValue);
+			} else {
+				ExtentFactory.getInstance().getExtent().log(Status.FAIL, "String Assertion FAILED on field "
+						+ locatorName + " Expected value was: " + expectedValue + " actual value is: " + actualValue);
+				Assert.assertTrue(false);
+			}
+		} catch (Exception e) {
+			Assert.assertTrue(false, e.toString());
+		}
+	}
+	
 
 	// Get text from webelement
-	public String getText(WebElement webElement, String element) {
+	public String getTextFromWebElement(WebElement webElement, String element) {
 		String text = "";
 		try {
-			text = webElement.getText();
+			text = webElement.getText().strip();
 			ExtentFactory.getInstance().getExtent().log(Status.PASS, element + "==> Text retried is: " + text);
 			return text;
 		} catch (Exception e) {

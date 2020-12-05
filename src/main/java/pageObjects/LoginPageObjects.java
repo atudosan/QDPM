@@ -10,18 +10,19 @@ public class LoginPageObjects extends TestBase {
 	
 	By EMAIL = By.name("login[email]");
 	By PASSWORD = By.name("login[password]");
-	By LOGIN_BTN = By.xpath("//button[@type='submit' and text()='Login ']");
+	By LOGIN_BTN = By.xpath("//button[@type='submit']");
 
 
 	
 	//log to account
-	public void loginIntoAccount(String email, String password) {
+	public HomePageObjects loginIntoAccount(String email, String password) {
 		WebElement emailTextField = DriverFactory.getInstance().getDriver().findElement(EMAIL);
 		sendText(emailTextField, "Email Login Field", email);
 		WebElement passwordTextField = DriverFactory.getInstance().getDriver().findElement(PASSWORD);
 		sendText(passwordTextField, "Password Login Field", password);
-		WebElement loginButton = DriverFactory.getInstance().getDriver().findElement(PASSWORD);
+		WebElement loginButton = DriverFactory.getInstance().getDriver().findElement(LOGIN_BTN);
 		click(loginButton, "Login Button");
+		return new HomePageObjects();
 		
 	}
 	

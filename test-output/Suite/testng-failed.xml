@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="2" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="methods" name="Test(failed)">
+  <listeners>
+    <listener class-name="reusableComponents.ListenersImplementation"/>
+  </listeners>
+  <test thread-count="2" parallel="methods" name="LoginTests(failed)">
     <classes>
       <class name="tests.TestCase">
         <methods>
           <include name="tearDown"/>
-          <include name="TestCase1"/>
-          <include name="TestCase2"/>
           <include name="LaunchApplication"/>
+          <include name="login1"/>
         </methods>
       </class> <!-- tests.TestCase -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- LoginTests(failed) -->
 </suite> <!-- Failed suite [Suite] -->
