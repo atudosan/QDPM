@@ -8,9 +8,7 @@ import pageObjects.TasksPageObjects;
 import testBase.TestBase;
 
 public class TestCase extends TestBase {
-	LoginPageObjects loginPage = new LoginPageObjects();
-	HomePageObjects homePage = new HomePageObjects();
-	TasksPageObjects taskPage = new TasksPageObjects();
+	
 	
 	
 	@Test
@@ -20,6 +18,7 @@ public class TestCase extends TestBase {
 		homePage.clickOnSubMenu("Tasks", "Add Task");
 		taskPage.createTask();
 		taskPage.verifyTaskCreationOnUI();
+		taskPage.verifyTaskCreationInDB();
 		
 		
 	}

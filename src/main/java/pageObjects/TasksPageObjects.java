@@ -1,15 +1,10 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import java.util.HashMap;
 
-import com.aventstack.extentreports.Status;
+import org.openqa.selenium.By;
 
 import testBase.DriverFactory;
-import testBase.ExtentFactory;
 import testBase.TestBase;
 
 public class TasksPageObjects extends TestBase {
@@ -51,7 +46,7 @@ public class TasksPageObjects extends TestBase {
 		click(DriverFactory.getInstance().getDriver().findElement(btn_search), "SearchButton");
 
 		// table verification
-		assertEqualsString("NewDemoTask1", getTaskTableCellValueByColumnName("Name"), "TaskNameInTable");
+		assertEqualsString("NewDemoTask1", getTaskTableCellValueByColumnName("Name"), "TaskNameFromTable_UI");
 	}
 
 	private String getTaskTableCellValueByColumnName(String columnName) {
@@ -60,6 +55,12 @@ public class TasksPageObjects extends TestBase {
 				+ columnName + "']/parent::th/preceding-sibling::th)+1]";
 		String value = DriverFactory.getInstance().getDriver().findElement(By.xpath(valueXpath)).getText();
 		return value;
+	}
+	
+	public void verifyTaskCreationInDB() throws Throwable {
+		HashMap<String, String> dbData = extractDataFromDB("tasks", "NewDemoTask1");
+		String actualEntryName = dbData.get("name");
+		assertEqualsString("NewDemoTask1", actualEntryName, "'Actual Entry Name From DB'");
 	}
 
 }

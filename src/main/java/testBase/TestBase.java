@@ -38,7 +38,7 @@ public class TestBase extends EngineAction {
 
 	@AfterMethod
 	public void tearDown() {
-		//DriverFactory.getInstance().closeBrowser();
+		DriverFactory.getInstance().closeBrowser();
 	}
 
 }

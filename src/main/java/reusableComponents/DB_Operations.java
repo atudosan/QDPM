@@ -2,11 +2,7 @@ package reusableComponents;
 
 import java.sql.*;
 import java.util.HashMap;  
-/**
- * @author: Prakash Narkhede
- * @Youtube: https://www.youtube.com/automationtalks
- * @LinkedIn: https://www.linkedin.com/in/panarkhede89/
- */
+
 public class DB_Operations {
 	
 		public synchronized HashMap<String, String> getSqlResultInMap(String sql) {  
@@ -15,8 +11,8 @@ public class DB_Operations {
 			try{  
 				Class.forName("com.mysql.cj.jdbc.Driver");  
 				Connection con=DriverManager.getConnection(  
-						"jdbc:mysql://localhost:3306/qdpm_qa?serverTimezone=UTC","root",""); 		
-
+						"jdbc:mysql://localhost:3306/qdpm_qa?serverTimezone=UTC","root",""); 
+						
 				Statement stmt=con.createStatement();  
 				ResultSet rs=stmt.executeQuery(sql);  
 	            ResultSetMetaData md = rs.getMetaData();
