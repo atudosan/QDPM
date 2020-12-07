@@ -22,31 +22,31 @@ public class TasksPageObjects extends TestBase {
 	By dd_taskCreatedBy = By.id("tasks_created_by");
 	By btn_save = By.xpath("//button[@type='submit' and text()='Save']");
 
-	public void createTask() throws Throwable {
+	public void createTask(HashMap<String, String> testData) throws Throwable {
 
 		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_selectProjectForNewTaskCreation),
-				"NewTaskProjectDropDown", "Project A");
+				"NewTaskProjectDropDown", testData.get("ProjectToCreateTaskUnder"));
 		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskType),
-				"NewTaskTypeDropDown", "Changes (Hourly rate $15.00)");
+				"NewTaskTypeDropDown", testData.get("TaskType"));
 		sendText(DriverFactory.getInstance().getDriver().findElement(txt_taskName), "NewTaskNameTextField",
-				"NewDemoTask1");
+				testData.get("TaskName"));
 		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskStatus),
-				"NewTaskStatusDropDown", "Open");
+				"NewTaskStatusDropDown", testData.get("TaskStatus"));
 		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskPriority),
-				"NewTaskPriorityDropDown", "High");
+				"NewTaskPriorityDropDown", testData.get("TaskPriority"));
 		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskLabel),
-				"NewTaskLabelDropDown", "Task");
+				"NewTaskLabelDropDown", testData.get("Label"));
 		click(DriverFactory.getInstance().getDriver().findElement(btn_save), "SaveButton");
 
 	}
 
-	public void verifyTaskCreationOnUI() throws Throwable {
+	public void verifyTaskCreationOnUI(HashMap<String, String> testData) throws Throwable {
 		moveCursorToWebElement(DriverFactory.getInstance().getDriver().findElement(field_search), "SearchTaskOption");
-		sendText(DriverFactory.getInstance().getDriver().findElement(txt_search), "SerachTaskTextBox", "NewDemoTask1");
+		sendText(DriverFactory.getInstance().getDriver().findElement(txt_search), "SerachTaskTextBox", testData.get("TaskName"));
 		click(DriverFactory.getInstance().getDriver().findElement(btn_search), "SearchButton");
 
 		// table verification
-		assertEqualsString("NewDemoTask1", getTaskTableCellValueByColumnName("Name"), "TaskNameFromTable_UI");
+		assertEqualsString(testData.get("TaskName"), getTaskTableCellValueByColumnName("Name"), "TaskNameFromTable_UI");
 	}
 
 	private String getTaskTableCellValueByColumnName(String columnName) {
@@ -57,10 +57,10 @@ public class TasksPageObjects extends TestBase {
 		return value;
 	}
 	
-	public void verifyTaskCreationInDB() throws Throwable {
-		HashMap<String, String> dbData = extractDataFromDB("tasks", "NewDemoTask1");
+	public void verifyTaskCreationInDB(HashMap<String, String> testData) throws Throwable {
+		HashMap<String, String> dbData = extractDataFromDB("tasks", testData.get("TaskName"));
 		String actualEntryName = dbData.get("name");
-		assertEqualsString("NewDemoTask1", actualEntryName, "'Actual Entry Name From DB'");
+		assertEqualsString(testData.get("TaskName"), actualEntryName, "'Actual Entry Name From DB'");
 	}
 
 }

@@ -10,7 +10,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="LaunchApplication"/>
-          <include name="login1"/>
+          <include name="login1" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- tests.TestCase -->
     </classes>

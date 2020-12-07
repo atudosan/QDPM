@@ -1,21 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-06T19:57:21 PST" name="Suite" finished-at="2020-12-06T19:57:37 PST" duration-ms="16163">
+  <suite started-at="2020-12-07T12:48:55 PST" name="Suite" finished-at="2020-12-07T12:49:24 PST" duration-ms="29622">
     <groups>
     </groups>
-    <test started-at="2020-12-06T19:57:21 PST" name="LoginTests" finished-at="2020-12-06T19:57:37 PST" duration-ms="16163">
+    <test started-at="2020-12-07T12:48:55 PST" name="LoginTests" finished-at="2020-12-07T12:49:24 PST" duration-ms="29622">
       <class name="tests.TestCase">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@4d02f94e]" started-at="2020-12-06T19:57:21 PST" name="LaunchApplication" finished-at="2020-12-06T19:57:29 PST" duration-ms="8163" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-07T12:48:55 PST" name="LaunchApplication" finished-at="2020-12-07T12:49:04 PST" duration-ms="9010" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="login1()[pri:0, instance:tests.TestCase@4d02f94e]" started-at="2020-12-06T19:57:29 PST" name="login1" finished-at="2020-12-06T19:57:37 PST" duration-ms="7591" status="PASS">
+        <test-method signature="login1(java.lang.Object)[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-07T12:49:04 PST" name="login1" data-provider="taskCreationData" finished-at="2020-12-07T12:49:12 PST" duration-ms="7895" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{UserName=michael@jackson.com, TaskPriority=Medum, Sr No=1, Label=Task, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=New Development - Internal WebSite, TaskStatus=Open, EndDate=2020-09-29, Test Case Name=CreateTask with Open Status, StartDate=2020-09-28, TaskName=dev1, FullName=Michael Jackson, TaskType=Change Priority Rate (Hourly rate $25.00), Password=Michael, CurrentProgress=0.05}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:968)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at org.testng.Assert.assertTrue(Assert.java:53)
+at reusableComponents.EngineAction.assertEqualsString(EngineAction.java:122)
+at pageObjects.TasksPageObjects.verifyTaskCreationInDB(TasksPageObjects.java:63)
+at tests.TestCase.login1(TestCase.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@4d02f94e]" started-at="2020-12-06T19:57:37 PST" name="tearDown" finished-at="2020-12-06T19:57:37 PST" duration-ms="78" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-07T12:49:12 PST" name="tearDown" finished-at="2020-12-07T12:49:12 PST" duration-ms="62" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-07T12:49:12 PST" name="LaunchApplication" finished-at="2020-12-07T12:49:19 PST" duration-ms="6446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="login1(java.lang.Object)[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-07T12:49:19 PST" name="login1" data-provider="taskCreationData" finished-at="2020-12-07T12:49:24 PST" duration-ms="5206" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{UserName=michael@jackson.com, TaskPriority=Urgent, Sr No=2, Label=Bug, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Maintenance work - Client CTX - Tremox XT5, TaskStatus=Re-opened, EndDate=2020-09-30, Test Case Name=Create Defect wtith Reopen Status, StartDate=2020-09-28, TaskName=dev2, FullName=Michael Jackson, TaskType=Defects (Hourly rate $0.00), Password=Michael, CurrentProgress=0.95}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:968)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at org.testng.Assert.assertTrue(Assert.java:53)
+at reusableComponents.EngineAction.assertEqualsString(EngineAction.java:122)
+at pageObjects.TasksPageObjects.verifyTaskCreationInDB(TasksPageObjects.java:63)
+at tests.TestCase.login1(TestCase.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-07T12:49:24 PST" name="tearDown" finished-at="2020-12-07T12:49:24 PST" duration-ms="52" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
