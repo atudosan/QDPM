@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class DB_Operations {
 	
+		//this method will get the reponse from DB in stored into a map variable
 		public synchronized HashMap<String, String> getSqlResultInMap(String sql) {  
             HashMap<String, String> data_map = new HashMap<>();
 

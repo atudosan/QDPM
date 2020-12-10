@@ -57,7 +57,7 @@ public class HomePageObjects extends TestBase {
 		click(subMenuXpath, "SubMenu");
 	}
 	
-	public void checkIfHomePageisOpened(String expectedFullname) throws Throwable {
+	public void checkIfHomePageIsOpened(String expectedFullname) throws Throwable {
 		WebElement userFullName = DriverFactory.getInstance().getDriver().findElement(userFullName_By);
 		String actualUserFullName = getTextFromWebElement(userFullName, "User Full Name");
 		assertEqualsString(actualUserFullName, expectedFullname, "Full Name Account");

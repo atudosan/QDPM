@@ -8,9 +8,9 @@
     <classes>
       <class name="tests.TestCase">
         <methods>
+          <include name="TaskCreationTest" invocation-numbers="0 1"/>
           <include name="tearDown"/>
           <include name="LaunchApplication"/>
-          <include name="login1" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- tests.TestCase -->
     </classes>

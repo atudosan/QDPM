@@ -24,7 +24,8 @@ public class TasksPageObjects extends TestBase {
 
 	public void createTask(HashMap<String, String> testData) throws Throwable {
 
-		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_selectProjectForNewTaskCreation),
+		selectDropDownByVisibleText(
+				DriverFactory.getInstance().getDriver().findElement(dd_selectProjectForNewTaskCreation),
 				"NewTaskProjectDropDown", testData.get("ProjectToCreateTaskUnder"));
 		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskType),
 				"NewTaskTypeDropDown", testData.get("TaskType"));
@@ -42,7 +43,8 @@ public class TasksPageObjects extends TestBase {
 
 	public void verifyTaskCreationOnUI(HashMap<String, String> testData) throws Throwable {
 		moveCursorToWebElement(DriverFactory.getInstance().getDriver().findElement(field_search), "SearchTaskOption");
-		sendText(DriverFactory.getInstance().getDriver().findElement(txt_search), "SerachTaskTextBox", testData.get("TaskName"));
+		sendText(DriverFactory.getInstance().getDriver().findElement(txt_search), "SerachTaskTextBox",
+				testData.get("TaskName"));
 		click(DriverFactory.getInstance().getDriver().findElement(btn_search), "SearchButton");
 
 		// table verification
@@ -50,17 +52,29 @@ public class TasksPageObjects extends TestBase {
 	}
 
 	private String getTaskTableCellValueByColumnName(String columnName) {
-
+		// this xpath will point to the specific record from by passing the name of the
+		// respective column
 		String valueXpath = "//table[starts-with(@id, 'itmes_listing')]/tbody/tr/td[count(//table[starts-with(@id, 'itmes_listing')]/thead/tr/th/div[text()='"
 				+ columnName + "']/parent::th/preceding-sibling::th)+1]";
 		String value = DriverFactory.getInstance().getDriver().findElement(By.xpath(valueXpath)).getText();
 		return value;
 	}
-	
+
+	// verify if task which was created in DB has the same records as we passed from
+	// Excel
 	public void verifyTaskCreationInDB(HashMap<String, String> testData) throws Throwable {
-		HashMap<String, String> dbData = extractDataFromDB("tasks", testData.get("TaskName"));
+		// verifing if name of task is the same
+		HashMap<String, String> dbData = extractDataFromDB("tasks", "name", testData.get("TaskName"));
 		String actualEntryName = dbData.get("name");
 		assertEqualsString(testData.get("TaskName"), actualEntryName, "'Actual Entry Name From DB'");
+		// verifing if status of task is the same
+		String dbTaskStatus = getOtherDetailsFromDB("tasks", "name", testData.get("TaskName"), "tasks_status_id", 
+				"tasks_status", "id", "name" );
+		assertEqualsString(testData.get("TaskStatus"), dbTaskStatus, "'Actual Task Status From DB'");
+		// verifing if status of task is the same
+		String dbTaskPriority = getOtherDetailsFromDB("tasks", "name", testData.get("TaskName"), "tasks_priority_id", 
+				"tasks_priority", "id", "name" );
+		assertEqualsString(testData.get("TaskPriority"), dbTaskPriority, "'Actual Task Priority From DB'");
 	}
 
 }

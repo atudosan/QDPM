@@ -156,11 +156,16 @@ public class EngineAction extends ObjectsRepository {
 		}
 		return text;
 	}
-
-	protected HashMap<String, String> extractDataFromDB(String table, String expectedEntry) throws Throwable {
+	
+	//this method will extract data from DB by passing name of the table and expected TaskName 
+	// will return a hashMAp object, key will point to the name of the column and value will store
+	// the actual record 
+	protected HashMap<String, String> extractDataFromDB(String nameOfTable, String nameOfColumn, String recordByColumn
+			) throws Throwable {
 		HashMap<String, String> dbData = null;
 		try {
-			String sqlQuery = "SELECT * FROM `" + table + "` WHERE name = '" + expectedEntry + "'";
+			//build sql query by passing nameOfTable,  
+			String sqlQuery = "SELECT * FROM `" + nameOfTable + "` WHERE "+nameOfColumn+" = '" + recordByColumn + "'";
 			dbData = dbOps.getSqlResultInMap(sqlQuery);
 			ExtentFactory.getInstance().getExtent().log(Status.INFO, "The data from DB was stored in HashMap");
 		} catch (Exception e) {
@@ -168,6 +173,53 @@ public class EngineAction extends ObjectsRepository {
 					"The data from DB was not stored in HashMap, due to" + e);
 		}
 		return dbData;
+	}
+	
+	protected String getOtherDetailsFromDB(String nameOfMainTable, String 
+			nameOfColumn, String recordNameByColumn, String SearchingColumnNameInMainTable,
+			String nameOfSearchingTable, String PassingColumnName, String SearchingColumnName) throws Throwable {
+		
+		ExtentFactory.getInstance().getExtent().log(Status.INFO,  "Starting Validatation Test --> "
+				+ "["+nameOfSearchingTable+"] value from DB") ;
+
+		HashMap<String, String> dbData = null;
+		String sqlFirstQuery = "SELECT * FROM `" + nameOfMainTable + "` WHERE "+nameOfColumn+" ="
+				+ " '" + recordNameByColumn + "'";
+		ExtentFactory.getInstance().getExtent().log(Status.INFO,  "1st SQL Query ["+sqlFirstQuery+"]");
+		
+		try {
+			dbData = dbOps.getSqlResultInMap(sqlFirstQuery);
+			ExtentFactory.getInstance().getExtent().log(Status.INFO, "Send main Query and stored recieved data "
+					+ "into a HashMAp");
+		} catch (Exception e) {
+			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
+					"The data from DB was not stored in HashMap, due to: " + e);
+		}
+		
+		String valueOfSearchingColumnFromMainTable = dbData.get(SearchingColumnNameInMainTable);
+		ExtentFactory.getInstance().getExtent().log(Status.INFO, "Stored the value "
+				+ "["+valueOfSearchingColumnFromMainTable+"] into a String for next SQL Query");
+
+		HashMap<String, String> dbSubData = null;
+		String sqlSecondQuery = "SELECT * FROM `" + nameOfSearchingTable + "` WHERE "+
+				PassingColumnName+" = '" + valueOfSearchingColumnFromMainTable + "'";
+		ExtentFactory.getInstance().getExtent().log(Status.INFO,  "2nd SQL Query ["+sqlSecondQuery+"]");
+
+		
+		try {
+			dbSubData = dbOps.getSqlResultInMap(sqlSecondQuery);
+			ExtentFactory.getInstance().getExtent().log(Status.INFO, "Send second Query and stored the data in HashMAp");
+
+		} catch (Exception e) {
+			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
+					"The data from DB was not stored in HashMap, due to" + e);
+		}
+		
+		String actualValueOfSearchingColumn = dbSubData.get(SearchingColumnName);
+		ExtentFactory.getInstance().getExtent().log(Status.INFO, "Stored the value ["+actualValueOfSearchingColumn+"] for DB Validation");
+
+		return actualValueOfSearchingColumn;
+		
 	}
 
 	private static void waitForVisibility(WebElement element, Integer timeOutInSeconds) {

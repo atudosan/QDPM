@@ -17,12 +17,13 @@ public class TestCase extends TestBase {
 	
 	@Test(dataProvider = "taskCreationData")
 	// we should pass object to our method because the data provider is returning us an object array
-	public void login1(Object obj1) throws Throwable {	
+	public void TaskCreationTest(Object obj1) throws Throwable {	
 		//we convert our Object array into a HashMap Object
+		@SuppressWarnings("unchecked")
 		HashMap<String, String> testData = (HashMap<String, String>) obj1;
 		
 		loginPage.loginIntoAccount(testData.get("UserName"), testData.get("Password"));
-		homePage.checkIfHomePageisOpened(testData.get("FullName"));
+		homePage.checkIfHomePageIsOpened(testData.get("FullName"));
 		homePage.clickOnSubMenu("Tasks", "Add Task");
 		//we pass our hashmap object as a parameter to that object and we have parametrize method itself 
 		taskPage.createTask(testData);
