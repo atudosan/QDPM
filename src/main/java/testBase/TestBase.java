@@ -21,7 +21,7 @@ public class TestBase extends EngineAction {
 		String browser = ConfigPropExtractData.getPropValueByKey("browser");
 		String url = ConfigPropExtractData.getPropValueByKey("url");
 		
-		// create driverInstance to pass it to setDriver() method
+		// create driverInstance to pass it to setDriver() method		
 		WebDriver driverInstance = factory.createBrowserInstance(browser);
 		// here we set the driver value into the ThreadLocal driver instance
 		DriverFactory.getInstance().setDriver(driverInstance);

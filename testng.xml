@@ -9,5 +9,5 @@
 			<class name="tests.TestCase" />
 		</classes>
 	</test> <!-- Test -->
-	
+		
 </suite> <!-- Suite -->

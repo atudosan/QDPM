@@ -2,46 +2,46 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-10T08:46:38 PST" name="Suite" finished-at="2020-12-10T08:47:07 PST" duration-ms="28333">
+  <suite started-at="2020-12-12T21:44:09 PST" name="Suite" finished-at="2020-12-12T21:44:38 PST" duration-ms="28663">
     <groups>
     </groups>
-    <test started-at="2020-12-10T08:46:38 PST" name="LoginTests" finished-at="2020-12-10T08:47:07 PST" duration-ms="28333">
+    <test started-at="2020-12-12T21:44:09 PST" name="LoginTests" finished-at="2020-12-12T21:44:38 PST" duration-ms="28663">
       <class name="tests.TestCase">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-10T08:46:39 PST" name="LaunchApplication" finished-at="2020-12-10T08:46:49 PST" duration-ms="9783" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:10 PST" name="LaunchApplication" finished-at="2020-12-12T21:44:19 PST" duration-ms="9170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-10T08:46:49 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-10T08:46:54 PST" duration-ms="5248" status="PASS">
+        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:19 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-12T21:44:25 PST" duration-ms="6445" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{UserName=michael@jackson.com, TaskPriority=Medum, Sr No=1, Label=Task, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=New Development - Internal WebSite, TaskStatus=Open, EndDate=2020-09-29, Test Case Name=CreateTask with Open Status, StartDate=2020-09-28, TaskName=dev1, FullName=Michael Jackson, TaskType=Change Priority Rate (Hourly rate $25.00), Password=Michael, CurrentProgress=0.05}]]>
+                <![CDATA[{UserName=developer@localhost.com, TaskPriority=Medum, Sr No=1, Label=Task, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 1, TaskStatus=Open, EndDate=2020-09-29, Test Case Name=CreateTask with Open Status, StartDate=2020-09-28, TaskName=dev1, FullName=developer, TaskType=Change Priority Rate (Hourly rate $25.00), Password=developer, CurrentProgress=0.05}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TaskCreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-10T08:46:54 PST" name="tearDown" finished-at="2020-12-10T08:46:54 PST" duration-ms="60" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:25 PST" name="tearDown" finished-at="2020-12-12T21:44:25 PST" duration-ms="71" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-10T08:46:54 PST" name="LaunchApplication" finished-at="2020-12-10T08:47:02 PST" duration-ms="7885" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:25 PST" name="LaunchApplication" finished-at="2020-12-12T21:44:32 PST" duration-ms="6733" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-10T08:47:02 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-10T08:47:07 PST" duration-ms="4870" status="PASS">
+        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:32 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-12T21:44:38 PST" duration-ms="5876" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{UserName=michael@jackson.com, TaskPriority=Urgent, Sr No=2, Label=Bug, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Maintenance work - Client CTX - Tremox XT5, TaskStatus=Re-opened, EndDate=2020-09-30, Test Case Name=Create Defect wtith Reopen Status, StartDate=2020-09-28, TaskName=dev2, FullName=Michael Jackson, TaskType=Defects (Hourly rate $0.00), Password=Michael, CurrentProgress=0.95}]]>
+                <![CDATA[{UserName=developer@localhost.com, TaskPriority=Urgent, Sr No=2, Label=Bug, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 2, TaskStatus=Re-opened, EndDate=2020-09-30, Test Case Name=Create Defect wtith Reopen Status, StartDate=2020-09-28, TaskName=dev2, FullName=developer, TaskType=Defects (Hourly rate $0.00), Password=developer, CurrentProgress=0.95}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TaskCreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@6c25e6c4]" started-at="2020-12-10T08:47:07 PST" name="tearDown" finished-at="2020-12-10T08:47:07 PST" duration-ms="59" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:38 PST" name="tearDown" finished-at="2020-12-12T21:44:38 PST" duration-ms="67" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

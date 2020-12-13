@@ -9,7 +9,7 @@ public class ConfigPropExtractData {
 	static Properties prop = new Properties();
 	
 	public static String getPropValueByKey(String key) throws Exception {
-		String path = System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties";
+		String path = System.getProperty("user.dir")+"\\src\\test\\resources\\dataProviders\\config.properties";
 		FileInputStream fis = new FileInputStream(path);
 		prop.load(fis);
 		String value = prop.get(key).toString();

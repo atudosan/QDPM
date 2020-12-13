@@ -7,7 +7,7 @@ public class DriverFactory {
 	// creating private instance
 	private static DriverFactory instance = new DriverFactory();
 
-	// private constructor
+	// private constructor so no one else can create another instance
 	private DriverFactory() {
 	}
 
@@ -16,15 +16,21 @@ public class DriverFactory {
 		return instance;
 	}
 
-	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	
-	//set current thread copy of this particular ThreadLocal variable with specific value(webdriver reference).
-	// driverInstance will be taken using createBrowserInstance() from BrowsrFactory class and it will be passed to the // TreadLocal driver variable
+
+	// set current thread copy of this particular ThreadLocal variable with specific
+	// value(webdriver reference).
+	// driverInstance will be taken using createBrowserInstance() from
+	// BrowserFactory class and it will be passed to the
+	// TreadLocal driver variable
+
 	public void setDriver(WebDriver driverInstance) {
 		driver.set(driverInstance); // this method will set the value for ThreadLocal driver instance
 	}
 
-	// this method will get the value for our driver from ThreadLocal driver instance
+	// this method will get the value for our driver from ThreadLocal driver
+	// instance
 	public WebDriver getDriver() {
 		return driver.get();
 	}
