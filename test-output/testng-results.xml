@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-12T21:44:09 PST" name="Suite" finished-at="2020-12-12T21:44:38 PST" duration-ms="28663">
+  <suite started-at="2020-12-12T21:53:36 PST" name="Suite" finished-at="2020-12-12T21:54:05 PST" duration-ms="29073">
     <groups>
     </groups>
-    <test started-at="2020-12-12T21:44:09 PST" name="LoginTests" finished-at="2020-12-12T21:44:38 PST" duration-ms="28663">
+    <test started-at="2020-12-12T21:53:36 PST" name="LoginTests" finished-at="2020-12-12T21:54:05 PST" duration-ms="29073">
       <class name="tests.TestCase">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:10 PST" name="LaunchApplication" finished-at="2020-12-12T21:44:19 PST" duration-ms="9170" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:53:37 PST" name="LaunchApplication" finished-at="2020-12-12T21:53:47 PST" duration-ms="9806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:19 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-12T21:44:25 PST" duration-ms="6445" status="PASS">
+        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:53:47 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-12T21:53:53 PST" duration-ms="6094" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TaskCreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:25 PST" name="tearDown" finished-at="2020-12-12T21:44:25 PST" duration-ms="71" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:53:53 PST" name="tearDown" finished-at="2020-12-12T21:53:53 PST" duration-ms="102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:25 PST" name="LaunchApplication" finished-at="2020-12-12T21:44:32 PST" duration-ms="6733" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:53:53 PST" name="LaunchApplication" finished-at="2020-12-12T21:53:59 PST" duration-ms="6590" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:32 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-12T21:44:38 PST" duration-ms="5876" status="PASS">
+        <test-method signature="TaskCreationTest(java.lang.Object)[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:53:59 PST" name="TaskCreationTest" data-provider="taskCreationData" finished-at="2020-12-12T21:54:05 PST" duration-ms="6092" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,7 +41,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TaskCreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:44:38 PST" name="tearDown" finished-at="2020-12-12T21:44:38 PST" duration-ms="67" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestCase@48a12036]" started-at="2020-12-12T21:54:05 PST" name="tearDown" finished-at="2020-12-12T21:54:05 PST" duration-ms="59" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
