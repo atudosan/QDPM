@@ -1,7 +1,8 @@
 package reusableComponents;
 
 import java.sql.*;
-import java.util.HashMap;  
+import java.util.HashMap;
+import java.util.Map;  
 
 public class DB_Operations {
 	
@@ -23,9 +24,9 @@ public class DB_Operations {
 	                    data_map.put(md.getColumnName(i), rs.getString(i));
 	                }
 	            }
-	            System.out.println(data_map);
+	            System.err.println(data_map);
 				con.close();  
-			}catch(Exception e){ System.out.println(e);}
+			}catch(Exception e){ System.err.println(e);}
 			return data_map;  
 		}  
 
