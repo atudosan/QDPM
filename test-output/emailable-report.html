@@ -9,11 +9,20 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">LoginTests</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">29,073</td><td></td><td></td></tr>
+<tr><td><a href="#t0">NegativeLoginTest</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">86</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginTests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">tests.TestCase</td><td><a href="#m0">TaskCreationTest</a></td><td rowspan="2">1607838827017</td><td rowspan="2">6094</td></tr><tr class="passedeven"><td><a href="#m1">TaskCreationTest</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">NegativeLoginTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">tests.NegativeLoginTest</td><td><a href="#m0">negativeLoginTest</a></td><td rowspan="1">1608321531297</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>LoginTests</h2><h3 id="m0">tests.TestCase#TaskCreationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{UserName=developer@localhost.com, TaskPriority=Medum, Sr No=1, Label=Task, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 1, TaskStatus=Open, EndDate=2020-09-29, Test Case Name=CreateTask with Open Status, StartDate=2020-09-28, TaskName=dev1, FullName=developer, TaskType=Change Priority Rate (Hourly rate $25.00), Password=developer, CurrentProgress=0.05}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">tests.TestCase#TaskCreationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{UserName=developer@localhost.com, TaskPriority=Urgent, Sr No=2, Label=Bug, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 2, TaskStatus=Re-opened, EndDate=2020-09-30, Test Case Name=Create Defect wtith Reopen Status, StartDate=2020-09-28, TaskName=dev2, FullName=developer, TaskType=Defects (Hourly rate $0.00), Password=developer, CurrentProgress=0.95}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>NegativeLoginTest</h2><h3 id="m0">tests.NegativeLoginTest#negativeLoginTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NullPointerException
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.NullPointerException
+	at reusableComponents.ExcelOperation.getTestDataIntoMap(ExcelOperation.java:46)
+	at tests.NegativeLoginTest.testDataSupplier(NegativeLoginTest.java:30)
+	... 20 more
+... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -11,16 +11,14 @@ import pageObjects.TasksPageObjects;
 import reusableComponents.ExcelOperation;
 import testBase.TestBase;
 
-public class TestCase extends TestBase {
-	
-
-	
+public class TaskCreationTest extends TestBase {
+		
 	ExcelOperation excel = new ExcelOperation("TaskCreationData");
 	
 	@Test(dataProvider = "taskCreationData")
 	// we should pass object to our method because the data provider is returning us an object array
-	public void TaskCreationTest(Object obj1) throws Throwable {	
-		//we convert our Object array into a HashMap Object
+	public void taskCreationTest(Object obj1) throws Throwable {	
+		//we convert our array Object into a HashMap Object
 		@SuppressWarnings("unchecked")
 		HashMap<String, String> testData = (HashMap<String, String>) obj1;
 		
