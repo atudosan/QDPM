@@ -8,22 +8,27 @@ import org.testng.annotations.Test;
 import reusableComponents.ExcelOperation;
 import testBase.TestBase;
 
-public class NegativeLoginTest extends TestBase {
+public class NegativeLoginTests extends TestBase {
 
 	ExcelOperation excel1 = new ExcelOperation("NegativeLoginTest");
 
-	@Test(dataProvider = "NegativeLoginTestData")
-	public void negativeLoginTest(Object obj1) {
+	
+	@Test(dataProvider = "negativeLoginTestData")
+	public void negativeLoginTests(Object obj2) throws Throwable {
 
 		// we convert our array Object into a HashMap Object
 		
-		HashMap<String, String> loginTestData = (HashMap<String, String>) obj1;
+		@SuppressWarnings("unchecked")
+		//HashMap<String, String> testData = (HashMap<String, String>) obj1;
+		HashMap<String, String> loginTestData = (HashMap<String, String>) obj2;
 
 		loginPage.loginIntoAccount(loginTestData.get("Username"), loginTestData.get("Password"));
+		loginPage.validateErrorMsg(loginTestData.get("Expected message"), loginTestData.get("Type"), 
+				loginTestData.get("info"));
 
 	}
 
-	@DataProvider(name = "NegativeLoginTestData")
+	@DataProvider(name = "negativeLoginTestData")
 	private Object[][] testDataSupplier() throws Exception {
 		Object[][] obj = new Object[excel1.rowCount()][1];
 		for (int i = 1; i <= excel1.rowCount(); i++) {

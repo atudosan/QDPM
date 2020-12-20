@@ -5,20 +5,17 @@ import java.util.HashMap;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import pageObjects.HomePageObjects;
-import pageObjects.LoginPageObjects;
-import pageObjects.TasksPageObjects;
 import reusableComponents.ExcelOperation;
 import testBase.TestBase;
 
 public class TaskCreationTest extends TestBase {
-		
-	ExcelOperation excel = new ExcelOperation("TaskCreationData");
+
+ExcelOperation excel = new ExcelOperation("TaskCreationData");
 	
 	@Test(dataProvider = "taskCreationData")
 	// we should pass object to our method because the data provider is returning us an object array
 	public void taskCreationTest(Object obj1) throws Throwable {	
-		//we convert our array Object into a HashMap Object
+		//we convert our Object array into a HashMap Object
 		@SuppressWarnings("unchecked")
 		HashMap<String, String> testData = (HashMap<String, String>) obj1;
 		
@@ -28,9 +25,7 @@ public class TaskCreationTest extends TestBase {
 		//we pass our hashmap object as a parameter to that object and we have parametrize method itself 
 		taskPage.createTask(testData);
 		taskPage.verifyTaskCreationOnUI(testData);
-		taskPage.verifyTaskCreationInDB(testData);
-		
-		
+		taskPage.verifyTaskCreationInDB(testData);		
 		
 	}
 	
@@ -42,8 +37,6 @@ public class TaskCreationTest extends TestBase {
 			obj[i - 1][0] = testData;
 		}
 		return obj;
-	}
-	
-	
+	}	
 
 }

@@ -47,7 +47,5 @@ public class UsersPageObjects {
 		PageFactory.initElements(driver, this);		
 	}
 	
-	
-	
-	
+		
 }
