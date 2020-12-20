@@ -31,11 +31,6 @@ public class LoginPageObjects extends TestBase {
 		return new HomePageObjects();
 	}
 
-	public void validateFieldRequiredMsgText(String expectedFieldRequiredMsg) {
-		WebElement fieldRequiredMsg = DriverFactory.getInstance().getDriver().findElement(FIELD_REQUIRED_MSG);
-		String actaulFieldRequiredMsg = fieldRequiredMsg.getText();
-		Assert.assertEquals(expectedFieldRequiredMsg, actaulFieldRequiredMsg);
-	}
 
 	public void validateErrorMsg(String expectedMsg, String errorMsgType, String testInfo ) {
 		ExtentFactory.getInstance().getExtent().log(Status.INFO, "Starting Negative Login Test using "+testInfo);

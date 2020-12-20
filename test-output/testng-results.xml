@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-19T22:31:47 PST" name="Suite" finished-at="2020-12-19T22:32:28 PST" duration-ms="41319">
+  <suite started-at="2020-12-20T07:25:52 PST" name="Suite" finished-at="2020-12-20T07:26:37 PST" duration-ms="45316">
     <groups>
     </groups>
-    <test started-at="2020-12-19T22:31:47 PST" name="negativeLoginTest" finished-at="2020-12-19T22:32:28 PST" duration-ms="41319">
-      <class name="tests.NegativeLoginTests">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:31:47 PST" name="LaunchApplication" finished-at="2020-12-19T22:31:56 PST" duration-ms="9364" status="PASS">
+    <test started-at="2020-12-20T07:25:52 PST" name="AllTests" finished-at="2020-12-20T07:26:37 PST" duration-ms="45316">
+      <class name="tests.TaskCreationTest">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TaskCreationTest@32811494]" started-at="2020-12-20T07:25:52 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:03 PST" duration-ms="10727" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:31:56 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-19T22:31:58 PST" duration-ms="1390" status="PASS">
+        <test-method signature="taskCreationTest(java.lang.Object)[pri:0, instance:tests.TaskCreationTest@32811494]" started-at="2020-12-20T07:26:03 PST" name="taskCreationTest" data-provider="taskCreationData" finished-at="2020-12-20T07:26:11 PST" duration-ms="8791" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{UserName=developer@localhost.com, TaskPriority=Medum, Sr No=1.0, Label=Task, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 1, TaskStatus=Open, EndDate=2020-09-29, Test Case Name=CreateTask with Open Status, StartDate=2020-09-28, TaskName=dev1, FullName=developer, TaskType=Change Priority Rate (Hourly rate $25.00), Password=developer, CurrentProgress=0.05}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- taskCreationTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TaskCreationTest@32811494]" started-at="2020-12-20T07:26:11 PST" name="tearDown" finished-at="2020-12-20T07:26:11 PST" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TaskCreationTest@32811494]" started-at="2020-12-20T07:26:11 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:19 PST" duration-ms="7284" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="taskCreationTest(java.lang.Object)[pri:0, instance:tests.TaskCreationTest@32811494]" started-at="2020-12-20T07:26:19 PST" name="taskCreationTest" data-provider="taskCreationData" finished-at="2020-12-20T07:26:27 PST" duration-ms="8231" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{UserName=developer@localhost.com, TaskPriority=Urgent, Sr No=2.0, Label=Bug, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 2, TaskStatus=Re-opened, EndDate=2020-09-30, Test Case Name=Create Defect wtith Reopen Status, StartDate=2020-09-28, TaskName=dev2, FullName=developer, TaskType=Defects (Hourly rate $0.00), Password=developer, CurrentProgress=0.95}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- taskCreationTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TaskCreationTest@32811494]" started-at="2020-12-20T07:26:27 PST" name="tearDown" finished-at="2020-12-20T07:26:27 PST" duration-ms="77" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.TaskCreationTest -->
+      <class name="tests.NegativeLoginTests">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:25:52 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:03 PST" duration-ms="10674" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:03 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-20T07:26:04 PST" duration-ms="1518" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,15 +62,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTests -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:31:58 PST" name="tearDown" finished-at="2020-12-19T22:31:58 PST" duration-ms="70" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:04 PST" name="tearDown" finished-at="2020-12-20T07:26:04 PST" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:31:58 PST" name="LaunchApplication" finished-at="2020-12-19T22:32:04 PST" duration-ms="6633" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:04 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:12 PST" duration-ms="7553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:04 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-19T22:32:06 PST" duration-ms="1244" status="PASS">
+        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:12 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-20T07:26:13 PST" duration-ms="1595" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,15 +81,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTests -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:06 PST" name="tearDown" finished-at="2020-12-19T22:32:06 PST" duration-ms="59" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:13 PST" name="tearDown" finished-at="2020-12-20T07:26:13 PST" duration-ms="69" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:06 PST" name="LaunchApplication" finished-at="2020-12-19T22:32:12 PST" duration-ms="6654" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:13 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:20 PST" duration-ms="7095" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:12 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-19T22:32:14 PST" duration-ms="1288" status="PASS">
+        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:20 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-20T07:26:22 PST" duration-ms="1248" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,15 +100,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTests -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:14 PST" name="tearDown" finished-at="2020-12-19T22:32:14 PST" duration-ms="59" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:22 PST" name="tearDown" finished-at="2020-12-20T07:26:22 PST" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:14 PST" name="LaunchApplication" finished-at="2020-12-19T22:32:20 PST" duration-ms="6688" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:22 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:29 PST" duration-ms="7135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:20 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-19T22:32:21 PST" duration-ms="294" status="PASS">
+        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:29 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-20T07:26:29 PST" duration-ms="281" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -79,15 +119,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTests -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:21 PST" name="tearDown" finished-at="2020-12-19T22:32:21 PST" duration-ms="73" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:29 PST" name="tearDown" finished-at="2020-12-20T07:26:29 PST" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:21 PST" name="LaunchApplication" finished-at="2020-12-19T22:32:27 PST" duration-ms="6661" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:29 PST" name="LaunchApplication" finished-at="2020-12-20T07:26:36 PST" duration-ms="7122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:27 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-19T22:32:28 PST" duration-ms="413" status="PASS">
+        <test-method signature="negativeLoginTests(java.lang.Object)[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:36 PST" name="negativeLoginTests" data-provider="negativeLoginTestData" finished-at="2020-12-20T07:26:37 PST" duration-ms="300" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -98,11 +138,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTests -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@48a12036]" started-at="2020-12-19T22:32:28 PST" name="tearDown" finished-at="2020-12-19T22:32:28 PST" duration-ms="67" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.NegativeLoginTests@4795ded0]" started-at="2020-12-20T07:26:37 PST" name="tearDown" finished-at="2020-12-20T07:26:37 PST" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.NegativeLoginTests -->
-    </test> <!-- negativeLoginTest -->
+    </test> <!-- AllTests -->
   </suite> <!-- Suite -->
 </testng-results>
