@@ -3,7 +3,9 @@ package reusableComponents;
 import java.time.Duration;
 import java.util.HashMap;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,92 +20,114 @@ import testBase.ExtentFactory;
 import testBase.ObjectsRepository;
 
 public class EngineAction extends ObjectsRepository {
+	
+	protected WebElement find(By locator) {
+		return DriverFactory.getInstance().getDriver().findElement(locator);			 
+	}
 
-	protected void sendText(WebElement webElement, String element, String text) {
+	protected void sendText(By locator, String elementLog, String text) {
 		try {
-			webElement.sendKeys(text);
+			find(locator).sendKeys(text);
 			ExtentFactory.getInstance().getExtent().log(Status.INFO,
-					"The text '" + text + "' was sent " + "to the [" + element + "]");
+					"The text '" + text + "' was sent " + "to the [" + elementLog + "]");
 		} catch (Exception e) {
 			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
-					"The text '" + text + "' was not " + "sent to the [" + element + "], due to Exception: " + e);
+					"The text '" + text + "' was not " + "sent to the [" + elementLog + "], due to Exception: " + e);
 
 		}
 	}
+	
+	protected void uploadFile(By locator, String fileName, String elementLog) {						 
+		click(locator, "Choose File Button");
+		String filePath = System.getProperty("user.dir")+"src/main/recources"+fileName;
+		sendText(locator, "type File Path", filePath);
+		find(locator).sendKeys(Keys.ENTER);
+		ExtentFactory.getInstance().getExtent().log(Status.INFO, elementLog+" was uploaded!");
+	}
 
-	protected void click(WebElement webElement, String element) {
+	protected void click(By locator, String elementLog) {
 		try {
-			webElement.click();
-			ExtentFactory.getInstance().getExtent().log(Status.INFO, "[" + element + "] was clicked successfully");
+			find(locator).click();
+			ExtentFactory.getInstance().getExtent().log(Status.INFO, "[" + elementLog + "] was clicked successfully");
 		} catch (Exception e) {
 			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
-					"[" + element + "] was not clicked, due to Exception: " + e);
+					"[" + elementLog + "] was not clicked, due to Exception: " + e);
+		}
+	}
+	
+	protected void click(WebElement element, String elementLog) {
+		try {
+			element.click();
+			ExtentFactory.getInstance().getExtent().log(Status.INFO, "[" + elementLog + "] was clicked successfully");
+		} catch (Exception e) {
+			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
+					"[" + elementLog + "] was not clicked, due to Exception: " + e);
 		}
 	}
 
-	protected void moveCursorToWebElement(WebElement webElement, String element) {
+	protected void moveCursorToWebElement(By locator, String elementLog) {
 		try {
 			JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
-			executor.executeScript("arguments[0].scrollIntoView(true);", webElement);
+			executor.executeScript("arguments[0].scrollIntoView(true);", find(locator));
 			Actions actions = new Actions(DriverFactory.getInstance().getDriver());
-			actions.moveToElement(webElement).build().perform();
+			actions.moveToElement(find(locator)).build().perform();
 			ExtentFactory.getInstance().getExtent().log(Status.INFO,
-					"Mouse is hover over [" + element + "] successfully");
+					"Mouse is hover over [" + elementLog + "] successfully");
 		} catch (Exception e) {
 			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
-					"Mouse is not hover over [" + element + "], due to Exception: " + e);
+					"Mouse is not hover over [" + elementLog + "], due to Exception: " + e);
 		}
 	}
 
-	protected void clearText(WebElement webElement, String element) {
+	protected void clearText(By locator, String elementLog) {
 		try {
-			webElement.clear();
+			find(locator).clear();
 			Thread.sleep(250);
 			ExtentFactory.getInstance().getExtent().log(Status.INFO,
-					"Data from [" + element + "] was cleared successfully");
+					"Data from [" + elementLog + "] was cleared successfully");
 		} catch (Exception e) {
 			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
-					"Data from [" + element + "] was not cleared, due to Exception: " + e);
+					"Data from [" + elementLog + "] was not cleared, due to Exception: " + e);
 		}
 	}
 
-	protected boolean isElementPresent(WebElement webElement, String element) {
+	protected boolean isElementPresent(By locator, String elementLog) {
 		boolean presence = false;
 		try {
-			webElement.isDisplayed();
-			ExtentFactory.getInstance().getExtent().log(Status.INFO, "The [" + element + "] is present");
+			find(locator).isDisplayed();
+			ExtentFactory.getInstance().getExtent().log(Status.INFO, "The [" + elementLog + "] is present");
 			return presence;
 		} catch (Exception e) {
 			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
-					"The [" + element + "] is not present, due to Exception: " + e);
+					"The [" + elementLog + "] is not present, due to Exception: " + e);
 			return presence;
 		}
 	}
 
 	// Select dropdown value value by visibleText
-	protected void selectDropDownByVisibleText(WebElement webElement, String element, String ddVisibleText)
+	protected void selectDropDownByVisibleText(By locator, String elementLog, String ddVisibleText)
 			throws Throwable {
 		try {
-			Select s = new Select(webElement);
-			waitForVisibility(webElement, 3);
+			Select s = new Select(find(locator));
+			waitForVisibility(locator, 3);
 			s.selectByVisibleText(ddVisibleText);
 			ExtentFactory.getInstance().getExtent().log(Status.INFO,
-					"Dropdown [" + element + "] was Selected by visible text: " + ddVisibleText);
+					"Dropdown [" + elementLog + "] was Selected by visible text: " + ddVisibleText);
 		} catch (Exception e) {
-			ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Dropdown [" + element
+			ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Dropdown [" + elementLog
 					+ "] was not selected by visible text: " + ddVisibleText + ", due to exception: " + e);
 		}
 	}
 
 	// Select dropdown value value by value
-	protected void selectDropDownByValue_custom(WebElement webElement, String element, String ddValue) throws Throwable {
+	protected void selectDropDownByValue_custom(By locator, String elementLog, String ddValue) throws Throwable {
 		try {
-			Select s = new Select(webElement);
+			Select s = new Select(find(locator));
 			s.selectByValue(ddValue);
 			ExtentFactory.getInstance().getExtent().log(Status.INFO,
-					"Dropdown [" + element + "] was Selected by its value: " + ddValue);
+					"Dropdown [" + elementLog + "] was Selected by its value: " + ddValue);
 		} catch (Exception e) {
-			ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Dropdown [" + element
+			ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Dropdown [" + elementLog
 					+ "] was not selected by its value: " + ddValue + ", due to exception: " + e);
 		}
 	}
@@ -143,15 +167,15 @@ public class EngineAction extends ObjectsRepository {
 	}
 
 	// Get text from webelement
-	protected String getTextFromWebElement(WebElement webElement, String element) {
+	protected String getTextFromWebElement(By locator, String elementLog) {
 		String text = "";
 		try {
-			text = webElement.getText().strip();
-			ExtentFactory.getInstance().getExtent().log(Status.INFO, element + "==> Text retried is: " + text);
+			text = find(locator).getText().strip();
+			ExtentFactory.getInstance().getExtent().log(Status.INFO, elementLog + "==> Text retried is: " + text);
 			return text;
 		} catch (Exception e) {
 			ExtentFactory.getInstance().getExtent().log(Status.FAIL,
-					element + "==> Text not retried due to exception: " + e);
+					elementLog + "==> Text not retried due to exception: " + e);
 
 		}
 		return text;
@@ -175,9 +199,9 @@ public class EngineAction extends ObjectsRepository {
 		return dbData;
 	}
 	
-	protected String getOtherDetailsFromDB(String nameOfMainTable, String 
-			nameOfColumn, String recordNameByColumn, String SearchingColumnNameInMainTable,
-			String nameOfSearchingTable, String PassingColumnName, String SearchingColumnName) throws Throwable {
+	protected String getOtherDetailsFromDB(String nameOfMainTable, String nameOfColumn, 
+			String recordNameByColumn, String SearchingColumnNameInMainTable, String nameOfSearchingTable,
+			String PassingColumnName, String SearchingColumnName) throws Throwable {
 		
 		ExtentFactory.getInstance().getExtent().log(Status.INFO,  "Starting Validatation Test --> "
 				+ "["+nameOfSearchingTable+"] value from DB") ;
@@ -222,10 +246,12 @@ public class EngineAction extends ObjectsRepository {
 		
 	}
 
-	private static void waitForVisibility(WebElement element, Integer timeOutInSeconds) {
+	private void waitForVisibility(By locator, Integer timeOutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getInstance().getDriver(),
 				Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.visibilityOf(find(locator)));
 	}
+	
+
 
 }

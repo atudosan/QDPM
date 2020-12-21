@@ -44,7 +44,7 @@ public class HomePageObjects extends TestBase {
 		String menuXpath_str = "//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='"+menu+"']";
 		WebElement menuXpath = DriverFactory.getInstance().getDriver().findElement(By.xpath(menuXpath_str));
 		click(menuXpath, "Menu");
-	}
+	}  
 	
 	public void clickOnSubMenu(String menu, String subMenu) {
 		String menuXpath_str = "//ul[@class='page-sidebar-menu']//i/following-sibling::span[text()='"+menu+"']";
@@ -58,10 +58,8 @@ public class HomePageObjects extends TestBase {
 	}
 	
 	public void checkIfHomePageIsOpened(String expectedFullname) throws Throwable {
-		WebElement userFullName = DriverFactory.getInstance().getDriver().findElement(userFullName_By);
-		String actualUserFullName = getTextFromWebElement(userFullName, "User Full Name");
+		String actualUserFullName = getTextFromWebElement(userFullName_By, "Actual User Full Name");
 		assertEqualsString(actualUserFullName, expectedFullname, "Full Name Account");
-		//assertIfActualStringContainsExpectedString(actualUserFullName, expectedFullname, "Full Name Account");		
 	}
 	
 

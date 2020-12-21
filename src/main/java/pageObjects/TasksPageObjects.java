@@ -24,28 +24,24 @@ public class TasksPageObjects extends TestBase {
 
 	public void createTask(HashMap<String, String> testData) throws Throwable {
 
-		selectDropDownByVisibleText(
-				DriverFactory.getInstance().getDriver().findElement(dd_selectProjectForNewTaskCreation),
-				"NewTaskProjectDropDown", testData.get("ProjectToCreateTaskUnder"));
-		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskType),
-				"NewTaskTypeDropDown", testData.get("TaskType"));
-		sendText(DriverFactory.getInstance().getDriver().findElement(txt_taskName), "NewTaskNameTextField",
-				testData.get("TaskName"));
-		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskStatus),
-				"NewTaskStatusDropDown", testData.get("TaskStatus"));
-		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskPriority),
-				"NewTaskPriorityDropDown", testData.get("TaskPriority"));
-		selectDropDownByVisibleText(DriverFactory.getInstance().getDriver().findElement(dd_taskLabel),
-				"NewTaskLabelDropDown", testData.get("Label"));
-		click(DriverFactory.getInstance().getDriver().findElement(btn_save), "SaveButton");
+		selectDropDownByVisibleText(dd_selectProjectForNewTaskCreation,	"New Task Project DropDown", 
+				testData.get("ProjectToCreateTaskUnder"));
+		selectDropDownByVisibleText(dd_taskType,  "New Task Type DropDown", testData.get("TaskType"));
+		sendText(txt_taskName, "New Task Name Text Field", testData.get("TaskName"));
+		selectDropDownByVisibleText(dd_taskStatus, "New Task Status DropDown", 
+				testData.get("TaskStatus"));
+		selectDropDownByVisibleText(dd_taskPriority, "New Task Priority DropDown", 
+				testData.get("TaskPriority"));
+		selectDropDownByVisibleText(dd_taskLabel, "New Task Label DropDown", testData.get("Label"));
+		click(btn_save, "Save Button");
 
 	}
 
 	public void verifyTaskCreationOnUI(HashMap<String, String> testData) throws Throwable {
-		moveCursorToWebElement(DriverFactory.getInstance().getDriver().findElement(field_search), "SearchTaskOption");
-		sendText(DriverFactory.getInstance().getDriver().findElement(txt_search), "SerachTaskTextBox",
+		moveCursorToWebElement(field_search, "Search Task Option");
+		sendText(txt_search, "Serach Task Text Box",
 				testData.get("TaskName"));
-		click(DriverFactory.getInstance().getDriver().findElement(btn_search), "SearchButton");
+		click(btn_search, "Search Button");
 
 		// table verification
 		assertEqualsString(testData.get("TaskName"), getTaskTableCellValueByColumnName("Name"), "TaskNameFromTable_UI");

@@ -20,12 +20,9 @@ public class LoginPageObjects extends TestBase {
 
 	// log to account
 	public HomePageObjects loginIntoAccount(String email, String password) {
-		WebElement emailTextField = DriverFactory.getInstance().getDriver().findElement(EMAIL);
-		sendText(emailTextField, "Email Login Field", email);
-		WebElement passwordTextField = DriverFactory.getInstance().getDriver().findElement(PASSWORD);
-		sendText(passwordTextField, "Password Login Field", password);
-		WebElement loginButton = DriverFactory.getInstance().getDriver().findElement(LOGIN_BTN);
-		click(loginButton, "Login Button");
+		sendText(EMAIL, "Email Login Field", email);
+		sendText(PASSWORD, "Password Login Field", password);
+		click(LOGIN_BTN, "Login Button");
 		ExtentFactory.getInstance().getExtent().log(Status.INFO, "Logged In using ["+email+"] as an "
 				+ "email and ["+password+"] as a Password");
 		return new HomePageObjects();
