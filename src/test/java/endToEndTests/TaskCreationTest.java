@@ -1,4 +1,4 @@
-package tests;
+package endToEndTests;
 
 import java.util.HashMap;
 
@@ -10,7 +10,8 @@ import testBase.TestBase;
 
 public class TaskCreationTest extends TestBase {
 
-ExcelOperation excel = new ExcelOperation("TaskCreationData");
+	ExcelOperation excel = new ExcelOperation("TaskCreationData");
+	
 	
 	@Test(dataProvider = "taskCreationData")
 	// we should pass object to our method because the data provider is returning us an object array
@@ -18,15 +19,14 @@ ExcelOperation excel = new ExcelOperation("TaskCreationData");
 		//we convert our Object array into a HashMap Object
 		@SuppressWarnings("unchecked")
 		HashMap<String, String> testData = (HashMap<String, String>) obj1;
-		
+				
 		loginPage.loginIntoAccount(testData.get("UserName"), testData.get("Password"));
 		homePage.checkIfHomePageIsOpened(testData.get("FullName"));
-		homePage.clickOnSubMenu("Tasks", "Add Task");
+		homePage.clickOnAddTaskMenu();
 		//we pass our hashmap object as a parameter to that object and we have parametrize method itself 
 		taskPage.createTask(testData);
 		taskPage.verifyTaskCreationOnUI(testData);
-		taskPage.verifyTaskCreationInDB(testData);		
-		
+		//taskPage.verifyTaskCreationInDB(testData);				
 	}
 	
 	@DataProvider (name="taskCreationData")

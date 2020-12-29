@@ -20,11 +20,9 @@ public class LoginPageObjects extends TestBase {
 
 	// log to account
 	public HomePageObjects loginIntoAccount(String email, String password) {
-		sendText(EMAIL, "Email Login Field", email);
-		sendText(PASSWORD, "Password Login Field", password);
-		click(LOGIN_BTN, "Login Button");
-		ExtentFactory.getInstance().getExtent().log(Status.INFO, "Logged In using ["+email+"] as an "
-				+ "email and ["+password+"] as a Password");
+		sendText(EMAIL, "Email Login", email);
+		sendText(PASSWORD, "Password Login", password);
+		clickOn(LOGIN_BTN, "Login");
 		return new HomePageObjects();
 	}
 

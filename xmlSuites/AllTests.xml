@@ -7,8 +7,9 @@
 	</listeners>
 	<test name="AllTests">
 		<classes>
-			<class name="tests.TaskCreationTest" />
-			<class name="tests.NegativeLoginTests" />
+			<class name="endToEndTests.TaskCreationTest" />
+			<class name="endToEndTests.NegativeLoginTests" />
+			<class name="endToEndTests.AddNewUserTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

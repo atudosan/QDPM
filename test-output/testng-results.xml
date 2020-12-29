@@ -1,51 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-20T23:03:14 PST" name="Suite" finished-at="2020-12-20T23:03:52 PST" duration-ms="37507">
+  <suite started-at="2020-12-29T10:01:40 PST" name="Suite" finished-at="2020-12-29T10:02:40 PST" duration-ms="60161">
     <groups>
     </groups>
-    <test started-at="2020-12-20T23:03:14 PST" name="LoginTests" finished-at="2020-12-20T23:03:52 PST" duration-ms="37507">
-      <class name="tests.TaskCreationTest">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TaskCreationTest@bf1ec20]" started-at="2020-12-20T23:03:15 PST" name="LaunchApplication" finished-at="2020-12-20T23:03:31 PST" duration-ms="15631" status="PASS">
+    <test started-at="2020-12-29T10:01:40 PST" name="Test" finished-at="2020-12-29T10:02:40 PST" duration-ms="60161">
+      <class name="endToEndTests.AddNewUserTest">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:01:41 PST" name="LaunchApplication" finished-at="2020-12-29T10:01:53 PST" duration-ms="11914" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="taskCreationTest(java.lang.Object)[pri:0, instance:tests.TaskCreationTest@bf1ec20]" started-at="2020-12-20T23:03:31 PST" name="taskCreationTest" data-provider="taskCreationData" finished-at="2020-12-20T23:03:39 PST" duration-ms="7614" status="PASS">
+        <test-method signature="addNewUserTest(java.lang.Object)[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:01:53 PST" name="addNewUserTest" data-provider="addUserData" finished-at="2020-12-29T10:01:57 PST" duration-ms="4669" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{UserName=developer@localhost.com, TaskPriority=Medum, Sr No=1.0, Label=Task, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 1, TaskStatus=Open, EndDate=2020-09-29, Test Case Name=CreateTask with Open Status, StartDate=2020-09-28, TaskName=dev1, FullName=developer, TaskType=Change Priority Rate (Hourly rate $25.00), Password=developer, CurrentProgress=0.05}]]>
+                <![CDATA[{No=1.0, Email=bruce@willis.com, LoginEmail=administrator@localhost.com, AcountName=Bruce Willis, UserGroup=Developer, Language=Italian, Phone=9.156479854E9, ActiveUser=true, AccountUserName=admin, UserNotify=true, LoginPassword=administrator, Password=Bruce}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- taskCreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TaskCreationTest@bf1ec20]" started-at="2020-12-20T23:03:39 PST" name="tearDown" finished-at="2020-12-20T23:03:39 PST" duration-ms="61" status="PASS">
+        </test-method> <!-- addNewUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:01:57 PST" name="tearDown" finished-at="2020-12-29T10:01:58 PST" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.TaskCreationTest@bf1ec20]" started-at="2020-12-20T23:03:39 PST" name="LaunchApplication" finished-at="2020-12-20T23:03:46 PST" duration-ms="6934" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:01:58 PST" name="LaunchApplication" finished-at="2020-12-29T10:02:04 PST" duration-ms="6534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="taskCreationTest(java.lang.Object)[pri:0, instance:tests.TaskCreationTest@bf1ec20]" started-at="2020-12-20T23:03:46 PST" name="taskCreationTest" data-provider="taskCreationData" finished-at="2020-12-20T23:03:52 PST" duration-ms="6279" status="PASS">
+        <test-method signature="addNewUserTest(java.lang.Object)[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:04 PST" name="addNewUserTest" data-provider="addUserData" finished-at="2020-12-29T10:02:08 PST" duration-ms="4119" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{UserName=developer@localhost.com, TaskPriority=Urgent, Sr No=2.0, Label=Bug, AttachmentFilePath=G:\1. My Cources\Test Case.docx, ProjectToCreateTaskUnder=Test Project 2, TaskStatus=Re-opened, EndDate=2020-09-30, Test Case Name=Create Defect wtith Reopen Status, StartDate=2020-09-28, TaskName=dev2, FullName=developer, TaskType=Defects (Hourly rate $0.00), Password=developer, CurrentProgress=0.95}]]>
+                <![CDATA[{No=2.0, Email=quentin@tarantino.com, LoginEmail=administrator@localhost.com, AcountName=Quentin Tarantino, UserGroup=Manager, Language=Hindi, Phone=9.163542158E9, ActiveUser=false, AccountUserName=admin, UserNotify=true, LoginPassword=administrator, Password=Quentin}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- taskCreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TaskCreationTest@bf1ec20]" started-at="2020-12-20T23:03:52 PST" name="tearDown" finished-at="2020-12-20T23:03:52 PST" duration-ms="87" status="PASS">
+        </test-method> <!-- addNewUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:08 PST" name="tearDown" finished-at="2020-12-29T10:02:08 PST" duration-ms="46" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.TaskCreationTest -->
-    </test> <!-- LoginTests -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:08 PST" name="LaunchApplication" finished-at="2020-12-29T10:02:15 PST" duration-ms="6521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="addNewUserTest(java.lang.Object)[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:15 PST" name="addNewUserTest" data-provider="addUserData" finished-at="2020-12-29T10:02:19 PST" duration-ms="4097" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{No=3.0, Email=john@travolta.com, LoginEmail=administrator@localhost.com, AcountName=John Travolta, UserGroup=Client, Language=Russian, Phone=9.196587412E9, ActiveUser=true, AccountUserName=admin, UserNotify=false, LoginPassword=administrator, Password=John}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:19 PST" name="tearDown" finished-at="2020-12-29T10:02:19 PST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:19 PST" name="LaunchApplication" finished-at="2020-12-29T10:02:25 PST" duration-ms="6547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="addNewUserTest(java.lang.Object)[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:25 PST" name="addNewUserTest" data-provider="addUserData" finished-at="2020-12-29T10:02:30 PST" duration-ms="4226" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{No=4.0, Email=uma@thurman.com, LoginEmail=administrator@localhost.com, AcountName=Uma Thurman, UserGroup=Designer, Language=Korean, Phone=9.156569874E9, ActiveUser=false, AccountUserName=admin, UserNotify=false, LoginPassword=administrator, Password=Uma}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:30 PST" name="tearDown" finished-at="2020-12-29T10:02:30 PST" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:30 PST" name="LaunchApplication" finished-at="2020-12-29T10:02:36 PST" duration-ms="6628" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="addNewUserTest(java.lang.Object)[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:36 PST" name="addNewUserTest" data-provider="addUserData" finished-at="2020-12-29T10:02:40 PST" duration-ms="3962" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{No=5.0, Email=samuel@jackson.com, LoginEmail=administrator@localhost.com, AcountName=Samuel Jackson, UserGroup=Admin, Language=Arabic, Phone=9.154632221E9, ActiveUser=true, AccountUserName=admin, UserNotify=true, LoginPassword=administrator, Password=Samuel}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:endToEndTests.AddNewUserTest@7b5a12ae]" started-at="2020-12-29T10:02:40 PST" name="tearDown" finished-at="2020-12-29T10:02:40 PST" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- endToEndTests.AddNewUserTest -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

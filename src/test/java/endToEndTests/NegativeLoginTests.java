@@ -1,4 +1,4 @@
-package tests;
+package endToEndTests;
 
 import java.util.HashMap;
 
